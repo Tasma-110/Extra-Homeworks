@@ -1,3 +1,9 @@
+def check_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Ошибка: Введите число.")
 def calc():
     while True:
         print("Available options: ")
@@ -19,8 +25,8 @@ def calc():
                 break
 
             if user_number in [1, 2, 3, 4, 5]:
-                num1 = float(input("Введите первое число: "))
-                num2 = float(input("Введите второе число: "))
+                num1 = check_number("Введите первое число: ")
+                num2 = check_number("Введите второе число: ")
 
                 if user_number == 1:
                     print(f"{num1} + {num2} = {num1 + num2}")
